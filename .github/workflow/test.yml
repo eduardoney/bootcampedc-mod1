@@ -1,7 +1,7 @@
-name: Deploy
+name: Test on PR
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: Iac Apply
+    - name: Iac teste infra.
       env:
         COMMAND_IAC: terraform
       run: |
@@ -35,4 +35,3 @@ jobs:
         $COMMAND_IAC init
         $COMMAND_IAC validate
         $COMMAND_IAC plan
-        $COMMAND_IAC apply -auto-approve
