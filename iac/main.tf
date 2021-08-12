@@ -23,7 +23,3 @@ resource "aws_s3_bucket_object" "codigo_spark" {
   source = "./exemplo_spark.py"
   etag   = filemd5("../exemplo_spark.py") #Faz a validação para n~ão subir se não tiver alteração.
 }
-
-provider "aws" {
-  region = "us-east-1"
-}
