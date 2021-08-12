@@ -7,7 +7,7 @@ provider "aws" {
 terraform  {
     backend "s3" {
       bucket = "terraform-state-eduney-707008544288"
-      key = "/state/mod1/terraform.tfstate"
+      key = "state/mod1/terraform.tfstate"
     }
     
 }
